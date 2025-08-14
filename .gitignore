@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+autoscan.code-workspace
+config.yaml
