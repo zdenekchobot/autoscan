@@ -83,7 +83,7 @@ for file in files_for_processing:
     qr_data = qr_reader.detect_and_decode(image=images[0])
     
         # Pokud QR kód neexistuje, přesunout soubor do "unprocessed_path" a pokračovat dalším
-    if qr_data == ():
+    if qr_data == () or qr_data is None:
         moved_file = move_file(cfg['app']['unprocessed_path'], file)
         log.error("V souboru {0} nerozpoznán QR kód. Nezpracován, přesunut do {1}".format(file, moved_file))
         continue
