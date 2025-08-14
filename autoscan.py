@@ -135,6 +135,8 @@ for file in files_for_processing:
             moved_file = move_file(cfg['app']['unprocessed_path'], upload_file_name_path)
             log.error("{0} se nepodařilo nahrát do Sharepointu, přesunut do {1}.".format(upload_file_name_path, moved_file))
             continue
+        else:
+            log.info("Soubor {0} nahrán do Sharepointu.".format(upload_file_name_path))
 
             # Získání id nahraného souboru
         etag = response.json()["eTag"].lower()
